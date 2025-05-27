@@ -110,7 +110,7 @@ export function Footer() {
             fill="white"
           />
         </svg>
-        <span>2023 Strivon Labs. Todos os direitos reservados.</span>
+        <span>2025 Strivon Labs. Todos os direitos reservados.</span>
       </div>
     </footer>
   );

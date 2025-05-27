@@ -56,7 +56,7 @@ export function Contact() {
               borderRadius: 10,
               outline: 'none',
               border: 'none',
-              width: '97%',
+              width: '97.5%',
               height: 120,
               marginTop: 10,
               resize: 'none',
