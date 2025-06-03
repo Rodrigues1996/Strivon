@@ -2,11 +2,24 @@ import { useState } from "react";
 
 export function Contact() {
   const [enviado, setEnviado] = useState(false);
+  const [nome, setNome] = useState('');
+  const [mensagem, setMensagem] = useState('');
+
+  function isMobile() {
+    return /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
+  }
 
   function handleEnviar() {
-    setEnviado(true);
+    const texto = `Olá, meu nome é ${nome}. Mensagem: ${mensagem}`;
+    const baseURL = isMobile()
+      ? 'https://api.whatsapp.com/send'
+      : 'https://web.whatsapp.com/send';
 
-    // Opcional: esconder a mensagem após alguns segundos
+    const link = `${baseURL}?phone=5581989248110&text=${encodeURIComponent(texto)}`;
+
+    window.open(link, '_blank');
+
+    setEnviado(true);
     setTimeout(() => setEnviado(false), 4000);
   }
 
@@ -26,39 +39,31 @@ export function Contact() {
 
       <div style={{ width: '100%', display: "flex" }}>
         <div style={{ width: '100%', display: "flex", flexDirection: "column" }}>
-          <div style={{ width: '100%', display: "flex", gap: 20 }}>
-            <input
-              placeholder="Nome"
-              style={{
-                padding: 10,
-                borderRadius: 10,
-                outline: 'none',
-                border: 'none',
-                width: '100%'
-              }}
-            />
-            <input
-              placeholder="Email"
-              style={{
-                padding: 10,
-                borderRadius: 10,
-                outline: 'none',
-                border: 'none',
-                width: '100%'
-              }}
-            />
-          </div>
+          <input
+            placeholder="Nome"
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
+            style={{
+              padding: 10,
+              borderRadius: 10,
+              outline: 'none',
+              border: 'none',
+              width: '60%',
+              marginBottom: 10
+            }}
+          />
 
           <textarea
             placeholder="Descreva sua dúvida ou mensagem"
+            value={mensagem}
+            onChange={(e) => setMensagem(e.target.value)}
             style={{
               padding: '12px 16px',
               borderRadius: 10,
               outline: 'none',
               border: 'none',
-              width: '97.5%',
+              width: '97%',
               height: 120,
-              marginTop: 10,
               resize: 'none',
               fontSize: 16
             }}
@@ -70,13 +75,11 @@ export function Contact() {
           onClick={handleEnviar}
           style={{
             cursor: 'pointer',
-            right: 10,
-            bottom: 10,
+            marginLeft: 10,
             background: '#226A67',
             borderRadius: 10,
             width: 48,
             height: 186,
-            marginLeft: 10,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
@@ -93,7 +96,7 @@ export function Contact() {
       {/* Mensagem de confirmação */}
       {enviado && (
         <p style={{ marginTop: 20, color: "#226A67", fontWeight: 'bold' }}>
-          Mensagem enviada com sucesso!
+          Redirecionando para o WhatsApp...
         </p>
       )}
     </div>
