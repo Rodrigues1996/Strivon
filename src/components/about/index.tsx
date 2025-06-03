@@ -21,29 +21,29 @@ export function About() {
       </p>
 
       {/* Tecnologias e Equipe lado a lado */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', gap: 40, flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', gap: 20, flexWrap: 'wrap' }}>
         {/* Tecnologias */}
-        <div style={{ flex: 1, minWidth: 250 }}>
+        <div style={{ flex: 1, minWidth: 250, marginLeft: 40 }}>
           <h4 style={{ color: '#226A67', fontSize: 18, marginBottom: 16 }}>Tecnologias Utilizadas</h4>
           <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
             <div style={{ textAlign: 'center' }}>
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" width="40" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" width="60" />
               <p style={{ fontSize: 14, marginTop: 8 }}>PHP</p>
             </div>
             <div style={{ textAlign: 'center' }}>
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" width="40" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" width="60" />
               <p style={{ fontSize: 14, marginTop: 8 }}>Laravel</p>
             </div>
             <div style={{ textAlign: 'center' }}>
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="40" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="60" />
               <p style={{ fontSize: 14, marginTop: 8 }}>React</p>
             </div>
             <div style={{ textAlign: 'center' }}>
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" width="40" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" width="60" />
               <p style={{ fontSize: 14, marginTop: 8 }}>MySQL</p>
             </div>
             <div style={{ textAlign: 'center' }}>
-              <img src="https://img.icons8.com/color/48/api.png" alt="Gateways" width="40" />
+              <img src="https://img.icons8.com/color/48/api.png" alt="Gateways" width="60" />
               <p style={{ fontSize: 14, marginTop: 8, maxWidth: 80 }}>Gateways de Pagamento</p>
             </div>
           </div>
